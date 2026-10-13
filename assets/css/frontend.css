@@ -1975,5 +1975,231 @@
 	}
 }
 
+/* ==========================================================================
+   MASTER RESPONSIVE ENGINE (ALL DEVICES: DESKTOP, TABLET & MOBILE)
+   ========================================================================== */
+
+/* --- TABLET BREAKPOINT (<= 991px) --- */
+@media (max-width: 991px) {
+	.nbm-single-layout {
+		grid-template-columns: 1fr !important;
+		gap: 28px !important;
+	}
+
+	.nbm-single-split-wrapper {
+		grid-template-columns: 1fr !important;
+		gap: 28px !important;
+	}
+
+	.nbm-split-media-pane {
+		position: static !important;
+	}
+
+	.nbm-split-main-image {
+		height: 380px !important;
+	}
+
+	.nbm-sticky-form {
+		position: static !important;
+		top: auto !important;
+	}
+
+	.nbm-gallery-showcase {
+		grid-template-columns: 1fr !important;
+		gap: 12px !important;
+	}
+
+	.nbm-thumbnails-grid {
+		grid-template-columns: repeat(4, 1fr) !important;
+	}
+
+	.nbm-thumb-item {
+		height: 120px !important;
+	}
+
+	.nbm-single-title {
+		font-size: 28px !important;
+	}
+}
+
+/* --- MOBILE PHONES BREAKPOINT (<= 768px) --- */
+@media (max-width: 768px) {
+	.nbm-single-listing .nbm-container {
+		padding: 0 16px !important;
+	}
+
+	.nbm-single-header {
+		margin-bottom: 18px !important;
+	}
+
+	.nbm-single-title {
+		font-size: 26px !important;
+		line-height: 1.25 !important;
+	}
+
+	.nbm-main-image {
+		height: 300px !important;
+	}
+
+	.nbm-thumbnails-grid {
+		grid-template-columns: repeat(4, 1fr) !important;
+		gap: 8px !important;
+	}
+
+	.nbm-thumb-item {
+		height: 80px !important;
+	}
+
+	.nbm-features-ribbon {
+		grid-template-columns: repeat(2, 1fr) !important;
+		gap: 10px !important;
+		padding: 14px 16px !important;
+	}
+
+	/* Card Presets on mobile */
+	.nbm-preset-bistro_horizontal {
+		grid-template-columns: 1fr !important;
+	}
+
+	.nbm-preset-bistro_horizontal .nbm-horizontal-media {
+		height: 220px !important;
+		min-height: auto !important;
+	}
+
+	.nbm-horizontal-meta-grid {
+		grid-template-columns: repeat(2, 1fr) !important;
+		gap: 8px !important;
+	}
+
+	/* Tabbed Navigator Mobile Touch Scroll */
+	.nbm-tab-navbar {
+		margin-left: -16px !important;
+		margin-right: -16px !important;
+		padding-left: 16px !important;
+		padding-right: 16px !important;
+		gap: 8px !important;
+		-webkit-overflow-scrolling: touch !important;
+	}
+
+	.nbm-tab-nav-btn {
+		padding: 8px 16px !important;
+		font-size: 13px !important;
+		flex-shrink: 0 !important;
+		min-height: 42px !important;
+	}
+
+	/* Booking Form mobile optimization */
+	.nbm-form-row {
+		grid-template-columns: 1fr !important;
+		gap: 10px !important;
+	}
+
+	.nbm-booking-form-box {
+		padding: 20px 16px !important;
+	}
+
+	.nbm-search-fields {
+		grid-template-columns: 1fr !important;
+	}
+
+	.nbm-contact-grid {
+		grid-template-columns: 1fr !important;
+	}
+}
+
+/* --- SMALL MOBILE PHONES BREAKPOINT (<= 480px) --- */
+@media (max-width: 480px) {
+	.nbm-single-listing .nbm-container {
+		padding: 0 12px !important;
+	}
+
+	.nbm-single-title {
+		font-size: 22px !important;
+	}
+
+	.nbm-main-image {
+		height: 230px !important;
+	}
+
+	.nbm-split-main-image {
+		height: 230px !important;
+	}
+
+	.nbm-thumbnails-grid {
+		grid-template-columns: repeat(4, 1fr) !important;
+		gap: 6px !important;
+	}
+
+	.nbm-thumb-item {
+		height: 65px !important;
+	}
+
+	.nbm-features-ribbon {
+		grid-template-columns: 1fr 1fr !important;
+		gap: 8px !important;
+		padding: 12px !important;
+	}
+
+	.nbm-features-ribbon .nbm-r-label {
+		font-size: 11px !important;
+	}
+
+	.nbm-features-ribbon .nbm-r-val {
+		font-size: 14px !important;
+	}
+
+	.nbm-content-block {
+		padding: 18px 14px !important;
+		border-radius: 10px !important;
+	}
+
+	.nbm-content-block h2 {
+		font-size: 18px !important;
+	}
+
+	.nbm-split-contact-bar {
+		flex-direction: column !important;
+	}
+
+	.nbm-split-contact-link {
+		width: 100% !important;
+		text-align: center !important;
+		box-sizing: border-box !important;
+	}
+
+	.nbm-horizontal-footer {
+		flex-direction: column !important;
+		align-items: stretch !important;
+		gap: 10px !important;
+	}
+
+	.nbm-horizontal-btn {
+		width: 100% !important;
+		text-align: center !important;
+		justify-content: center !important;
+	}
+
+	.nbm-card-footer {
+		flex-direction: column !important;
+		align-items: stretch !important;
+		gap: 10px !important;
+	}
+
+	.nbm-card-footer .nbm-btn {
+		width: 100% !important;
+		text-align: center !important;
+		justify-content: center !important;
+	}
+
+	.nbm-public-hours-table td {
+		padding: 8px 6px !important;
+		font-size: 12.5px !important;
+	}
+
+	.nbm-pane-reserve-box {
+		padding: 0 !important;
+	}
+}
+
 
 
