@@ -40,10 +40,13 @@ class NBM_Widget_Bar_Grid extends \Elementor\Widget_Base {
 				'type'    => \Elementor\Controls_Manager::SELECT,
 				'default' => 'modern',
 				'options' => array(
-					'modern'        => __( 'Modern Sophisticate (Preset 1)', 'nexora-booking-manager' ),
-					'luxury'        => __( 'Luxury VIP & Gold (Preset 2)', 'nexora-booking-manager' ),
-					'glassmorphism' => __( 'Glassmorphism Overlay (Preset 3)', 'nexora-booking-manager' ),
-					'minimal'       => __( 'Minimalist Editorial (Preset 4)', 'nexora-booking-manager' ),
+					'modern'            => __( 'Modern Sophisticate (Preset 1)', 'nexora-booking-manager' ),
+					'luxury'            => __( 'Luxury VIP & Gold (Preset 2)', 'nexora-booking-manager' ),
+					'glassmorphism'     => __( 'Glassmorphism Overlay (Preset 3)', 'nexora-booking-manager' ),
+					'minimal'           => __( 'Minimalist Editorial (Preset 4)', 'nexora-booking-manager' ),
+					'neon'              => __( 'Neon Cyberpunk (Preset 5)', 'nexora-booking-manager' ),
+					'vintage'           => __( 'Vintage Speakeasy (Preset 6)', 'nexora-booking-manager' ),
+					'bistro_horizontal' => __( 'Horizontal Executive (Preset 7)', 'nexora-booking-manager' ),
 				),
 			)
 		);

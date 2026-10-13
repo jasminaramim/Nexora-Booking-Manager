@@ -87,6 +87,7 @@ class NBM_Shortcodes {
 
 		$query       = new WP_Query( $query_args );
 		$instance    = self::get_next_instance_id();
+		$preset      = sanitize_key( $atts['preset'] );
 		$btn_text    = sanitize_text_field( $atts['btn_text'] );
 		$columns     = min( 4, max( 1, intval( $atts['columns'] ) ) );
 
@@ -121,7 +122,7 @@ class NBM_Shortcodes {
 
 		ob_start();
 		?>
-		<div class="nbm-wrapper nbm-hotels-grid-wrap" id="nbm-hotels-<?php echo esc_attr( $instance ); ?>">
+		<div class="nbm-wrapper nbm-hotels-grid-wrap nbm-wrap-preset-<?php echo esc_attr( $preset ); ?>" id="nbm-hotels-<?php echo esc_attr( $instance ); ?>">
 			<?php echo $inline_styles; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 			<?php if ( $query->have_posts() ) : ?>
 				<div class="nbm-grid nbm-grid-cols-<?php echo esc_attr( $columns ); ?>">

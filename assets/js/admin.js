@@ -229,25 +229,145 @@
 				var customBtnStyle = accent ? 'background-color:' + accent + ' !important; border-color:' + accent + ' !important;' : '';
 
 				if (type === 'hotels') {
-					var hotelBtn = customBtn || 'Book Stay';
-					return '<div class="nbm-card nbm-hotel-card" style="' + bgStyle + '">' +
-						'<div class="nbm-card-media">' +
-							'<a href="#" class="nbm-media-link" onclick="return false;">' +
-								'<div class="nbm-card-placeholder"><span class="dashicons dashicons-building"></span></div>' +
-							'</a>' +
-							'<div class="nbm-price-badge"><span class="nbm-price-prefix">From</span> <strong class="nbm-price-amount">$220.00</strong> <span class="nbm-price-period">/night</span></div>' +
-						'</div>' +
-						'<div class="nbm-card-body">' +
-							'<div class="nbm-card-location"><span class="nbm-icon-pin">📍</span><span>Miami Beach, Florida</span></div>' +
-							'<h3 class="nbm-card-title"><a href="#" onclick="return false;">The Grand Azure Luxury Suite</a></h3>' +
-							'<div class="nbm-card-excerpt">Oceanfront balcony with heated private pool, king bed, and 24/7 concierge.</div>' +
-							'<div class="nbm-card-amenities"><span class="nbm-amenity-tag">Infinity Pool</span><span class="nbm-amenity-tag">Free WiFi</span><span class="nbm-amenity-tag">Spa</span></div>' +
-							'<div class="nbm-card-footer">' +
-								'<div class="nbm-capacity-info"><span>👥 Up to 4 guests</span></div>' +
-								'<a href="#" class="nbm-btn nbm-btn-primary" style="' + customBtnStyle + '" onclick="return false;">' + hotelBtn + '</a>' +
-							'</div>' +
-						'</div>' +
-					'</div>';
+					var hotelBtn = customBtn || (preset === 'luxury' ? 'Reserve VIP Suite' : (preset === 'neon' ? 'Reserve Neon Stay' : (preset === 'vintage' ? 'Reserve Chamber' : (preset === 'bistro_horizontal' ? 'Book Suite' : (preset === 'minimal' ? 'View Property' : 'Book Stay')))));
+
+					switch (preset) {
+						case 'luxury':
+							return '<div class="nbm-card nbm-hotel-card nbm-preset-luxury" style="' + bgStyle + '">' +
+								'<div class="nbm-luxury-glow"></div>' +
+								'<div class="nbm-card-media">' +
+									'<a href="#" class="nbm-media-link" onclick="return false;"><div class="nbm-card-placeholder nbm-luxury-placeholder"><span class="dashicons dashicons-building"></span></div></a>' +
+									'<div class="nbm-luxury-badge"><span class="nbm-luxury-crown">👑</span><span class="nbm-luxury-tier">5★ VIP RESORT</span></div>' +
+								'</div>' +
+								'<div class="nbm-card-body">' +
+									'<div class="nbm-card-location nbm-luxury-location"><span class="nbm-sparkle">✦</span><span>Bora Bora Island Lagoon</span></div>' +
+									'<h3 class="nbm-card-title nbm-luxury-title"><a href="#" onclick="return false;">The Royal Horizon 5-Star VIP Resort</a></h3>' +
+									'<div class="nbm-card-excerpt nbm-luxury-excerpt">Private overwater bungalow, infinity plunge pool, personal sommelier & 24/7 butler service.</div>' +
+									'<div class="nbm-luxury-instruction-peek"><span class="nbm-info-icon">💎</span><span>$480.00 / night • 24/7 Butler Service</span></div>' +
+									'<div class="nbm-card-footer nbm-luxury-footer">' +
+										'<div class="nbm-meta-stats nbm-luxury-stats"><span>👥 Up to 4 guests</span><span>⭐ 5.0 Star</span></div>' +
+										'<a href="#" class="nbm-btn nbm-btn-luxury" style="' + (accent ? 'background:' + accent + ' !important;' : '') + '" onclick="return false;"><span>' + hotelBtn + '</span><span class="nbm-luxury-arrow">✦</span></a>' +
+									'</div>' +
+								'</div>' +
+							'</div>';
+
+						case 'glassmorphism':
+							return '<div class="nbm-card nbm-hotel-card nbm-preset-glassmorphism" style="min-height:380px;">' +
+								'<div class="nbm-glass-bg-wrapper">' +
+									'<div class="nbm-glass-placeholder"><span class="dashicons dashicons-building"></span></div>' +
+									'<div class="nbm-glass-top-pill"><span class="nbm-glass-range">$350.00/nt</span><span class="nbm-glass-dot">•</span><span class="nbm-glass-city">Miami Bayside</span></div>' +
+								'</div>' +
+								'<div class="nbm-glass-frosted-panel" style="' + bgStyle + '">' +
+									'<h3 class="nbm-card-title nbm-glass-title"><a href="#" onclick="return false;">Solarium Bayside Glassmorphic Villa</a></h3>' +
+									'<div class="nbm-glass-meta-row"><span>👥 Up to 4 guests</span><span>✨ Concierge Included</span></div>' +
+									'<div class="nbm-glass-footer">' +
+										'<a href="#" class="nbm-btn nbm-btn-glass" style="' + customBtnStyle + '" onclick="return false;"><span>' + hotelBtn + '</span><span class="nbm-glass-arrow">&nearr;</span></a>' +
+									'</div>' +
+								'</div>' +
+							'</div>';
+
+						case 'minimal':
+							return '<div class="nbm-card nbm-hotel-card nbm-preset-minimal" style="' + bgStyle + '">' +
+								'<div class="nbm-card-media nbm-minimal-media">' +
+									'<div class="nbm-card-placeholder"><span class="dashicons dashicons-building"></span></div>' +
+									'<span class="nbm-minimal-tag">$210/nt</span>' +
+								'</div>' +
+								'<div class="nbm-card-body nbm-minimal-body">' +
+									'<div class="nbm-minimal-header">' +
+										'<h3 class="nbm-card-title nbm-minimal-title"><a href="#" onclick="return false;">København Minimalist Design Hotel</a></h3>' +
+										'<span class="nbm-minimal-location">Nordic Waterfront Arts District</span>' +
+									'</div>' +
+									'<div class="nbm-minimal-specs">' +
+										'<div class="nbm-spec-item"><span class="nbm-spec-label">Rate</span><span class="nbm-spec-val">$210</span></div>' +
+										'<div class="nbm-spec-item"><span class="nbm-spec-label">Capacity</span><span class="nbm-spec-val">2 guests</span></div>' +
+										'<div class="nbm-spec-item"><span class="nbm-spec-label">Check-in</span><span class="nbm-spec-val">3:00 PM</span></div>' +
+									'</div>' +
+									'<div class="nbm-card-footer nbm-minimal-footer">' +
+										'<a href="#" class="nbm-btn nbm-btn-outline nbm-btn-minimal" style="' + (accent ? 'border-color:' + accent + '; color:' + accent + ' !important;' : '') + '" onclick="return false;">' + hotelBtn + '</a>' +
+									'</div>' +
+								'</div>' +
+							'</div>';
+
+						case 'neon':
+							return '<div class="nbm-card nbm-hotel-card nbm-preset-neon" style="' + bgStyle + '">' +
+								'<div class="nbm-neon-glow-border"></div>' +
+								'<div class="nbm-card-media nbm-neon-media">' +
+									'<div class="nbm-card-placeholder nbm-neon-placeholder"><span class="dashicons dashicons-building"></span></div>' +
+									'<div class="nbm-neon-badge-pill"><span class="nbm-neon-pulse-dot"></span><span class="nbm-neon-tag-text">$280.00/nt • ELECTRIC BOUTIQUE</span></div>' +
+								'</div>' +
+								'<div class="nbm-card-body nbm-neon-body">' +
+									'<div class="nbm-card-location nbm-neon-location"><span class="nbm-neon-icon">⚡</span><span>South Beach Electric Quarter</span></div>' +
+									'<h3 class="nbm-card-title nbm-neon-title"><a href="#" onclick="return false;">Hyperion Neon Sky Boutique Hotel</a></h3>' +
+									'<div class="nbm-card-excerpt nbm-neon-excerpt">Panoramic skyline rooftop infinity pool, electric cocktail bar, and soundproof luxury pods.</div>' +
+									'<div class="nbm-neon-tags"><span class="nbm-neon-tag">Rooftop Pool</span><span class="nbm-neon-tag">DJ Lounge</span></div>' +
+									'<div class="nbm-card-footer nbm-neon-footer">' +
+										'<div class="nbm-meta-stats nbm-neon-stats"><span>👥 Up to 4 Guests</span><span>⚡ VIP Rooftop</span></div>' +
+										'<a href="#" class="nbm-btn nbm-btn-neon" style="' + customBtnStyle + '" onclick="return false;"><span>' + hotelBtn + '</span><span class="nbm-neon-arrow">&rarr;</span></a>' +
+									'</div>' +
+								'</div>' +
+							'</div>';
+
+						case 'vintage':
+							return '<div class="nbm-card nbm-hotel-card nbm-preset-vintage" style="' + bgStyle + '">' +
+								'<div class="nbm-vintage-seal"><span class="nbm-vintage-seal-ring">★</span><span class="nbm-vintage-seal-tier">EST. 1928</span></div>' +
+								'<div class="nbm-card-media nbm-vintage-media"><div class="nbm-card-placeholder nbm-vintage-placeholder"><span class="dashicons dashicons-building"></span></div></div>' +
+								'<div class="nbm-card-body">' +
+									'<div class="nbm-card-location nbm-vintage-location"><span>✦ HISTORIC FRENCH QUARTER ✦</span></div>' +
+									'<h3 class="nbm-card-title nbm-vintage-title"><a href="#" onclick="return false;">The Copper Cask Heritage Hotel & Palace</a></h3>' +
+									'<div class="nbm-vintage-divider"><span class="nbm-vintage-line"></span><span class="nbm-vintage-diamond">♦</span><span class="nbm-vintage-line"></span></div>' +
+									'<div class="nbm-card-excerpt nbm-vintage-excerpt">Hand-carved mahogany, antique chandeliers, authentic 1920s architecture and clawfoot bathtubs.</div>' +
+									'<div class="nbm-card-footer nbm-vintage-footer">' +
+										'<div class="nbm-meta-stats nbm-vintage-stats"><span>🗝 2 Guests</span><span>🏛 Landmark</span></div>' +
+										'<a href="#" class="nbm-btn nbm-btn-vintage" style="' + customBtnStyle + '" onclick="return false;">' + hotelBtn + '</a>' +
+									'</div>' +
+								'</div>' +
+							'</div>';
+
+						case 'bistro_horizontal':
+							return '<div class="nbm-card nbm-hotel-card nbm-preset-bistro_horizontal" style="' + bgStyle + '">' +
+								'<div class="nbm-card-media nbm-horizontal-media">' +
+									'<div class="nbm-card-placeholder"><span class="dashicons dashicons-building"></span></div>' +
+									'<span class="nbm-badge-pill nbm-horizontal-pill">$340.00/night</span>' +
+								'</div>' +
+								'<div class="nbm-card-body nbm-horizontal-body">' +
+									'<div class="nbm-horizontal-header">' +
+										'<div class="nbm-card-location"><span>📍 West End Promenade</span></div>' +
+										'<h3 class="nbm-card-title nbm-horizontal-title"><a href="#" onclick="return false;">L\'Aubergine Executive Horizon Suite</a></h3>' +
+									'</div>' +
+									'<div class="nbm-card-excerpt nbm-horizontal-excerpt">Spacious master bedroom, executive marble conference lounge, private sauna, and sommelier service.</div>' +
+									'<div class="nbm-horizontal-meta-grid">' +
+										'<div class="nbm-h-meta-item"><span class="nbm-h-meta-lbl">Capacity</span><span class="nbm-h-meta-val">👥 4 Guests</span></div>' +
+										'<div class="nbm-h-meta-item"><span class="nbm-h-meta-lbl">Min Stay</span><span class="nbm-h-meta-val">🌙 2 Nights</span></div>' +
+										'<div class="nbm-h-meta-item"><span class="nbm-h-meta-lbl">Check-in</span><span class="nbm-h-meta-val">⏱ 3:00 PM</span></div>' +
+									'</div>' +
+									'<div class="nbm-card-footer nbm-horizontal-footer">' +
+										'<div class="nbm-card-tags"><span class="nbm-tag-pill">Executive Suite</span><span class="nbm-tag-pill">Spa Access</span></div>' +
+										'<a href="#" class="nbm-btn nbm-btn-primary nbm-horizontal-btn" style="' + customBtnStyle + '" onclick="return false;"><span>' + hotelBtn + '</span><span class="nbm-btn-arrow">&rarr;</span></a>' +
+									'</div>' +
+								'</div>' +
+							'</div>';
+
+						case 'modern':
+						default:
+							return '<div class="nbm-card nbm-hotel-card nbm-preset-modern" style="' + bgStyle + '">' +
+								'<div class="nbm-card-media">' +
+									'<a href="#" class="nbm-media-link" onclick="return false;">' +
+										'<div class="nbm-card-placeholder"><span class="dashicons dashicons-building"></span></div>' +
+									'</a>' +
+									'<div class="nbm-price-badge"><span class="nbm-price-prefix">From</span> <strong class="nbm-price-amount">$220.00</strong> <span class="nbm-price-period">/night</span></div>' +
+								'</div>' +
+								'<div class="nbm-card-body">' +
+									'<div class="nbm-card-location"><span class="nbm-icon-pin">📍</span><span>Miami Beach, Florida</span></div>' +
+									'<h3 class="nbm-card-title"><a href="#" onclick="return false;">The Grand Azure Luxury Suite</a></h3>' +
+									'<div class="nbm-card-excerpt">Oceanfront balcony with heated private pool, king bed, and 24/7 concierge.</div>' +
+									'<div class="nbm-card-amenities"><span class="nbm-amenity-tag">Infinity Pool</span><span class="nbm-amenity-tag">Free WiFi</span><span class="nbm-amenity-tag">Spa</span></div>' +
+									'<div class="nbm-card-footer">' +
+										'<div class="nbm-capacity-info"><span>👥 Up to 4 guests</span></div>' +
+										'<a href="#" class="nbm-btn nbm-btn-primary" style="' + customBtnStyle + '" onclick="return false;">' + hotelBtn + '</a>' +
+									'</div>' +
+								'</div>' +
+							'</div>';
+					}
 				}
 
 				// Bars presets
@@ -504,7 +624,7 @@
 			});
 
 			// SAVE PRESET DEFAULTS AJAX ACTION
-			$('#nbm-save-preset-defaults-btn, #nbm-save-preset-defaults-btn-side').on('click', function(e) {
+			$('#nbm-save-preset-defaults-btn, #nbm-save-preset-defaults-btn-side, .nbm-trigger-save-cards').on('click', function(e) {
 				e.preventDefault();
 				var $btn = $(this);
 				var originalText = $btn.html();
@@ -548,6 +668,27 @@
 		}
 
 		// =========================================================================
+		// SINGLE DETAILS PAGE DESIGN STUDIO (5 RESPONSIVE LAYOUTS)
+		// =========================================================================
+		var currentSingleLayout = $('input[name="nbm_single_layout_choice"]:checked').val() || 'classic_hero';
+
+		var layoutTitles = {
+			'classic_hero': 'Classic Luxury Hero',
+			'split_screen': 'Modern 50/50 Split Screen',
+			'fullscreen_cinematic': 'Fullscreen Cinematic (Dark Onyx)',
+			'editorial_magazine': 'Editorial Magazine & Story',
+			'tabbed_navigator': 'Interactive Tabbed Navigator'
+		};
+
+		function refreshSingleLivePreview() {
+			var layout = $('input[name="nbm_single_layout_choice"]:checked').val() || currentSingleLayout;
+			currentSingleLayout = layout;
+			if ($('#nbm-single-preview-stage').length) {
+				$('#nbm-single-preview-stage').html(renderSingleMockup(layout));
+			}
+		}
+
+		// =========================================================================
 		// STUDIO TOP NAVIGATION TABS (CARDS VS SINGLE DETAILS)
 		// =========================================================================
 		$('.nbm-top-tab-btn').on('click', function(e) {
@@ -562,30 +703,11 @@
 			} else {
 				$('#nbm-tab-section-cards').hide();
 				$('#nbm-tab-section-single').show();
-				if (typeof refreshSingleLivePreview === 'function') {
-					refreshSingleLivePreview();
-				}
+				refreshSingleLivePreview();
 			}
 		});
 
-		$('.nbm-trigger-save-cards').on('click', function(e) {
-			e.preventDefault();
-			$('#nbm-save-preset-defaults-btn').trigger('click');
-		});
-
-		// =========================================================================
-		// SINGLE DETAILS PAGE DESIGN STUDIO (5 RESPONSIVE LAYOUTS)
-		// =========================================================================
 		if ($('#nbm-single-preview-stage').length) {
-			var currentSingleLayout = $('input[name="nbm_single_layout_choice"]:checked').val() || 'classic_hero';
-
-			var layoutTitles = {
-				'classic_hero': 'Classic Luxury Hero',
-				'split_screen': 'Modern 50/50 Split Screen',
-				'fullscreen_cinematic': 'Fullscreen Cinematic (Dark Onyx)',
-				'editorial_magazine': 'Editorial Magazine & Story',
-				'tabbed_navigator': 'Interactive Tabbed Navigator'
-			};
 
 			function renderSingleMockup(layout) {
 				var badgeTitle = layoutTitles[layout] || layout;
@@ -808,18 +930,16 @@
 				'</div>';
 			}
 
-			function refreshSingleLivePreview() {
-				var layout = $('input[name="nbm_single_layout_choice"]:checked').val() || currentSingleLayout;
-				$('#nbm-single-preview-stage').html(renderSingleMockup(layout));
-			}
+			// Watch Layout Card selection (click & change)
+			$(document).on('change', 'input[name="nbm_single_layout_choice"]', function() {
+				currentSingleLayout = $(this).val();
+				refreshSingleLivePreview();
+			});
 
-			// Watch Layout Card selection
-			$('.nbm-layout-card').on('click', function() {
+			$(document).on('click', '.nbm-layout-card', function() {
 				var $card = $(this);
 				var layout = $card.data('layout');
-				$card.find('input[type="radio"]').prop('checked', true);
-				currentSingleLayout = layout;
-				refreshSingleLivePreview();
+				$card.find('input[type="radio"]').prop('checked', true).trigger('change');
 			});
 
 			// Single Device Switcher

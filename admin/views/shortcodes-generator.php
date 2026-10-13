@@ -46,7 +46,7 @@ $current_single_layout = NBM_Settings::get( 'single_details_design', 'classic_he
 	<!-- ===================================================================== -->
 	<div id="nbm-tab-section-cards" class="nbm-tab-content-panel">
 		<div style="display:flex; justify-content:flex-end; margin-bottom:12px;">
-			<button type="button" class="button button-primary button-hero nbm-trigger-save-cards" style="font-weight:700; display:flex; align-items:center; gap:8px;">
+			<button type="button" id="nbm-save-preset-defaults-btn" class="button button-primary button-hero nbm-trigger-save-cards" style="font-weight:700; display:flex; align-items:center; gap:8px;">
 				<span class="dashicons dashicons-saved" style="margin-top:2px;"></span>
 				<span><?php esc_html_e( 'Save Cards Preset Defaults (সংরক্ষণ করুন)', 'nexora-booking-manager' ); ?></span>
 			</button>
@@ -150,7 +150,7 @@ $current_single_layout = NBM_Settings::get( 'single_details_design', 'classic_he
 							</label>
 						</div>
 
-						<button type="button" class="button button-primary nbm-trigger-save-cards" style="width:100%; padding:8px 14px; font-size:14px; font-weight:700; justify-content:center; display:flex; align-items:center; gap:6px;">
+						<button type="button" id="nbm-save-preset-defaults-btn-side" class="button button-primary nbm-trigger-save-cards" style="width:100%; padding:8px 14px; font-size:14px; font-weight:700; justify-content:center; display:flex; align-items:center; gap:6px;">
 							💾 <?php esc_html_e( 'Save as Site Defaults', 'nexora-booking-manager' ); ?>
 						</button>
 

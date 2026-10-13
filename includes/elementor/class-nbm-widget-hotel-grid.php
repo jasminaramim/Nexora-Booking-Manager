@@ -34,6 +34,24 @@ class NBM_Widget_Hotel_Grid extends \Elementor\Widget_Base {
 		);
 
 		$this->add_control(
+			'preset',
+			array(
+				'label'   => __( 'Card Design Preset', 'nexora-booking-manager' ),
+				'type'    => \Elementor\Controls_Manager::SELECT,
+				'default' => 'modern',
+				'options' => array(
+					'modern'            => __( 'Modern Sophisticate (Preset 1)', 'nexora-booking-manager' ),
+					'luxury'            => __( 'Luxury VIP & Gold (Preset 2)', 'nexora-booking-manager' ),
+					'glassmorphism'     => __( 'Glassmorphism Overlay (Preset 3)', 'nexora-booking-manager' ),
+					'minimal'           => __( 'Minimalist Editorial (Preset 4)', 'nexora-booking-manager' ),
+					'neon'              => __( 'Neon Cyberpunk (Preset 5)', 'nexora-booking-manager' ),
+					'vintage'           => __( 'Vintage Speakeasy (Preset 6)', 'nexora-booking-manager' ),
+					'bistro_horizontal' => __( 'Horizontal Executive (Preset 7)', 'nexora-booking-manager' ),
+				),
+			)
+		);
+
+		$this->add_control(
 			'columns',
 			array(
 				'label'   => __( 'Columns', 'nexora-booking-manager' ),
@@ -87,7 +105,8 @@ class NBM_Widget_Hotel_Grid extends \Elementor\Widget_Base {
 	protected function render() {
 		$settings = $this->get_settings_for_display();
 		echo do_shortcode( sprintf(
-			'[nbm_hotels columns="%s" per_page="%s" city="%s" order="%s"]',
+			'[nbm_hotels preset="%s" columns="%s" per_page="%s" city="%s" order="%s"]',
+			esc_attr( $settings['preset'] ?? 'modern' ),
 			esc_attr( $settings['columns'] ),
 			esc_attr( $settings['per_page'] ),
 			esc_attr( $settings['city'] ),

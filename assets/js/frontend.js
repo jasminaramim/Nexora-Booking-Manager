@@ -196,16 +196,22 @@
 			$wrap.find('.nbm-tab-pane').removeClass('active').hide();
 
 			// Show matching tab pane
-			if (targetTab === 'overview') {
-				$wrap.find('#nbm-tab-overview, #nbm-tab-overview-ribbon').addClass('active').fadeIn(200);
-			} else if (targetTab === 'gallery') {
-				$wrap.find('#nbm-tab-gallery').addClass('active').fadeIn(200);
-			} else if (targetTab === 'hours' || targetTab === 'policies') {
-				$wrap.find('#nbm-tab-hours, #nbm-tab-policies').addClass('active').fadeIn(200);
-			} else if (targetTab === 'amenities') {
-				$wrap.find('#nbm-tab-amenities, #nbm-tab-amenities-rules').addClass('active').fadeIn(200);
-			} else if (targetTab === 'reserve') {
-				$wrap.find('#nbm-tab-reserve').addClass('active').fadeIn(200);
+			var $targetPane = $wrap.find('#nbm-pane-' + targetTab);
+			if ($targetPane.length) {
+				$targetPane.addClass('active').fadeIn(200);
+			} else {
+				// Fallback for alternate ID mappings
+				if (targetTab === 'overview') {
+					$wrap.find('#nbm-tab-overview, #nbm-tab-overview-ribbon').addClass('active').fadeIn(200);
+				} else if (targetTab === 'gallery') {
+					$wrap.find('#nbm-tab-gallery').addClass('active').fadeIn(200);
+				} else if (targetTab === 'hours' || targetTab === 'policies') {
+					$wrap.find('#nbm-tab-hours, #nbm-tab-policies').addClass('active').fadeIn(200);
+				} else if (targetTab === 'amenities') {
+					$wrap.find('#nbm-tab-amenities, #nbm-tab-amenities-rules').addClass('active').fadeIn(200);
+				} else if (targetTab === 'reserve') {
+					$wrap.find('#nbm-tab-reserve').addClass('active').fadeIn(200);
+				}
 			}
 		});
 
