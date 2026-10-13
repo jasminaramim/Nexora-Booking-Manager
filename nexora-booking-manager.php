@@ -1,13 +1,13 @@
 <?php
 /**
  * Plugin Name:       Nexora Booking Manager
- * Plugin URI:        https://nexorabooking.com
+ * Plugin URI:        https://github.com/jasminaramim/Nexora-Booking-Manager
  * Description:       A modern, standalone Hotel and Bar reservation management system with request-based bookings, availability conflict prevention, and Elementor integration.
  * Version:           1.0.0
  * Author:            Jasmin
- * Author URI:        https://nexorabooking.com
+ * Author URI:        https://github.com/jasminaramim
  * License:           GPL-2.0+
- * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
+ * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain:       nexora-booking-manager
  * Domain Path:       /languages
  * Requires at least: 5.8
