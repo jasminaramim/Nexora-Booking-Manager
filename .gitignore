@@ -14,3 +14,9 @@ desktop.ini
 
 # Windows temporary files
 ~$*
+
+# Archives & build artifacts
+*.zip
+*.tar.gz
+build/
+dist/
