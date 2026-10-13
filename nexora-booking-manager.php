@@ -5,7 +5,7 @@
  * Description:       A modern, standalone Hotel and Bar reservation management system with request-based bookings, availability conflict prevention, and Elementor integration.
  * Version:           1.0.0
  * Author:            Jasmin
- * Author URI:        https://github.com/jasminaramim
+ * Author URI:        https://jasmin-v01.vercel.app/
  * License:           GPL-2.0+
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain:       nexora-booking-manager

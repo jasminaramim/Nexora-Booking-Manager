@@ -1,6 +1,6 @@
 === Nexora Booking Manager ===
 Contributors: jasmin, nexoradev
-Donate link: https://nexorabooking.com
+Donate link: https://jasmin-v01.vercel.app/
 Tags: hotel booking, bar reservation, table booking, elementor booking, appointment
 Requires at least: 5.8
 Tested up to: 6.7

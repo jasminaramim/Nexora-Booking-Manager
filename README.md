@@ -1,7 +1,7 @@
 # Nexora Booking Manager
 
 > **Premium Hotel & Bar Reservation Management System for WordPress**  
-> Developed by **Jasmin** ([Nexora Development Team](https://github.com/jasminaramim))
+> Developed by **Jasmin** ([Portfolio](https://jasmin-v01.vercel.app/) • [GitHub](https://github.com/jasminaramim))
 
 [![WordPress Version](https://img.shields.io/badge/WordPress-6.0%2B-blue.svg)](https://wordpress.org)
 [![PHP Version](https://img.shields.io/badge/PHP-7.4%20|%208.0%20|%208.1%20|%208.2-purple.svg)](https://php.net)
