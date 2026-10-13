@@ -1,0 +1,269 @@
+/**
+ * Admin Stylesheet for Nexora Booking Manager
+ */
+
+.nbm-admin-wrap {
+	margin: 20px 20px 0 2px;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+.nbm-admin-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 20px;
+	flex-wrap: wrap;
+	gap: 15px;
+}
+
+.nbm-admin-title-area h1 {
+	margin-bottom: 4px;
+	font-size: 24px;
+	font-weight: 700;
+	color: #0f172a;
+}
+
+.nbm-admin-subtitle {
+	margin: 0;
+	color: #64748b;
+	font-size: 14px;
+}
+
+/* Alert Banner */
+.nbm-alert-banner {
+	display: flex;
+	align-items: center;
+	gap: 15px;
+	background: #fffbeb;
+	border: 1px solid #fef3c7;
+	border-left: 5px solid #f59e0b;
+	padding: 14px 18px;
+	border-radius: 8px;
+	margin-bottom: 24px;
+	box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.nbm-alert-banner .dashicons {
+	font-size: 28px;
+	width: 28px;
+	height: 28px;
+	color: #d97706;
+}
+
+.nbm-alert-banner p {
+	margin: 2px 0 0;
+	color: #92400e;
+	font-size: 13px;
+}
+
+/* Stat Cards Grid */
+.nbm-stats-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	gap: 18px;
+	margin-bottom: 28px;
+}
+
+.nbm-stat-card {
+	background: #ffffff;
+	border-radius: 10px;
+	padding: 20px;
+	display: flex;
+	align-items: center;
+	gap: 16px;
+	box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+	border: 1px solid #e2e8f0;
+	transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.nbm-stat-card:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 4px 6px -1px rgba(0,0,0,0.08), 0 2px 4px -1px rgba(0,0,0,0.05);
+}
+
+.nbm-stat-icon {
+	font-size: 32px;
+	width: 32px;
+	height: 32px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.nbm-card-pending .nbm-stat-icon { color: #f59e0b; }
+.nbm-card-confirmed .nbm-stat-icon { color: #10b981; }
+.nbm-card-total .nbm-stat-icon { color: #3b82f6; }
+.nbm-card-hotels .nbm-stat-icon { color: #6366f1; }
+.nbm-card-bars .nbm-stat-icon { color: #ec4899; }
+
+.nbm-stat-info {
+	display: flex;
+	flex-direction: column;
+}
+
+.nbm-stat-label {
+	font-size: 13px;
+	color: #64748b;
+	font-weight: 500;
+}
+
+.nbm-stat-val {
+	font-size: 26px;
+	font-weight: 700;
+	color: #0f172a;
+	line-height: 1.2;
+}
+
+/* Panel Containers */
+.nbm-panel {
+	background: #ffffff;
+	border: 1px solid #e2e8f0;
+	border-radius: 10px;
+	padding: 22px;
+	margin-bottom: 24px;
+	box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+
+.nbm-panel-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 16px;
+}
+
+.nbm-panel h2 {
+	margin: 0 0 16px;
+	font-size: 17px;
+	font-weight: 600;
+	color: #1e293b;
+	border-bottom: 1px solid #f1f5f9;
+	padding-bottom: 10px;
+}
+
+/* Status Pills */
+.nbm-status-pill {
+	display: inline-block;
+	padding: 4px 10px;
+	border-radius: 20px;
+	font-size: 12px;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.3px;
+}
+
+.nbm-badge-pending { background: #fef3c7; color: #92400e; border: 1px solid #fde68a; }
+.nbm-badge-confirmed { background: #d1fae5; color: #065f46; border: 1px solid #a7f3d0; }
+.nbm-badge-rejected { background: #fee2e2; color: #991b1b; border: 1px solid #fecaca; }
+.nbm-badge-cancelled { background: #f1f5f9; color: #475569; border: 1px solid #e2e8f0; }
+.nbm-badge-completed { background: #e0e7ff; color: #3730a3; border: 1px solid #c7d2fe; }
+
+/* Sub type */
+.nbm-sub-type {
+	font-size: 12px;
+	color: #64748b;
+	font-weight: normal;
+}
+
+.nbm-text-dim {
+	color: #64748b;
+	font-size: 12px;
+}
+
+/* Details 2-Column Grid */
+.nbm-details-grid {
+	display: grid;
+	grid-template-columns: 2fr 1.1fr;
+	gap: 24px;
+	margin-top: 15px;
+}
+
+@media (max-width: 900px) {
+	.nbm-details-grid {
+		grid-template-columns: 1fr;
+	}
+}
+
+.nbm-info-table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.nbm-info-table th {
+	width: 180px;
+	text-align: left;
+	padding: 10px 0;
+	color: #475569;
+	font-weight: 600;
+	font-size: 13px;
+	border-bottom: 1px solid #f1f5f9;
+}
+
+.nbm-info-table td {
+	padding: 10px 0;
+	font-size: 14px;
+	color: #0f172a;
+	border-bottom: 1px solid #f1f5f9;
+}
+
+.nbm-msg-box {
+	background: #f8fafc;
+	border: 1px solid #e2e8f0;
+	padding: 12px;
+	border-radius: 6px;
+	margin-top: 4px;
+	font-style: italic;
+	color: #334155;
+}
+
+/* Timeline Notes */
+.nbm-notes-timeline {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+}
+
+.nbm-note-item {
+	background: #f8fafc;
+	border: 1px solid #e2e8f0;
+	border-radius: 6px;
+	padding: 12px;
+	position: relative;
+}
+
+.nbm-note-system {
+	border-left: 4px solid #3b82f6;
+}
+
+.nbm-note-status_change {
+	border-left: 4px solid #10b981;
+}
+
+.nbm-note-admin {
+	border-left: 4px solid #8b5cf6;
+}
+
+.nbm-note-meta {
+	display: flex;
+	justify-content: space-between;
+	font-size: 12px;
+	color: #64748b;
+	margin-bottom: 6px;
+}
+
+.nbm-note-content {
+	font-size: 13px;
+	color: #1e293b;
+	line-height: 1.5;
+}
+
+.nbm-back-link {
+	display: inline-block;
+	margin-bottom: 8px;
+	color: #2563eb;
+	text-decoration: none;
+	font-weight: 500;
+}
+
+.nbm-back-link:hover {
+	text-decoration: underline;
+}

@@ -1,0 +1,14 @@
+/**
+ * Elementor integration stylesheet for Nexora Booking Manager
+ */
+
+.elementor-widget-nbm_hotel_grid,
+.elementor-widget-nbm_bar_grid,
+.elementor-widget-nbm_booking_form,
+.elementor-widget-nbm_search_filter {
+	width: 100%;
+}
+
+.elementor-editor-active .nbm-ajax-booking-form {
+	pointer-events: auto;
+}
