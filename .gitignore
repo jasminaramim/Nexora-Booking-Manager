@@ -4,7 +4,6 @@ Thumbs.db
 desktop.ini
 
 # IDE & Editor files
-.vscode/
 .idea/
 *.sublime-project
 *.sublime-workspace
@@ -20,3 +19,7 @@ desktop.ini
 *.tar.gz
 build/
 dist/
+branch_structure.json
+temp_auto_push.bat
+temp_interactive_push.bat
+.gitignore

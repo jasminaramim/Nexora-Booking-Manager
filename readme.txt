@@ -3,7 +3,7 @@ Contributors: jasmin, nexoradev
 Donate link: https://jasmin-v01.vercel.app/
 Tags: hotel booking, bar reservation, table booking, elementor booking, appointment
 Requires at least: 5.8
-Tested up to: 6.7
+Tested up to: 7.1
 Requires PHP: 7.4
 Stable tag: 1.0.0
 License: GPLv2 or later
