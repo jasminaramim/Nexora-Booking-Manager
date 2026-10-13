@@ -680,10 +680,12 @@
 			'tabbed_navigator': 'Interactive Tabbed Navigator'
 		};
 
+		var renderSingleMockup = null;
+
 		function refreshSingleLivePreview() {
 			var layout = $('input[name="nbm_single_layout_choice"]:checked').val() || currentSingleLayout;
 			currentSingleLayout = layout;
-			if ($('#nbm-single-preview-stage').length) {
+			if ($('#nbm-single-preview-stage').length && typeof renderSingleMockup === 'function') {
 				$('#nbm-single-preview-stage').html(renderSingleMockup(layout));
 			}
 		}
@@ -707,11 +709,9 @@
 			}
 		});
 
-		if ($('#nbm-single-preview-stage').length) {
-
-			function renderSingleMockup(layout) {
-				var badgeTitle = layoutTitles[layout] || layout;
-				$('#nbm-single-active-badge').text(badgeTitle);
+		renderSingleMockup = function(layout) {
+			var badgeTitle = layoutTitles[layout] || layout;
+			$('#nbm-single-active-badge').text(badgeTitle);
 
 				$('.nbm-layout-card').removeClass('selected');
 				$('.nbm-layout-card[data-layout="' + layout + '"]').addClass('selected');
@@ -997,8 +997,12 @@
 				});
 			});
 
+			// Auto-switch to single tab if URL hash is #single
+			if (window.location.hash === '#single') {
+				$('.nbm-top-tab-btn[data-target="single"]').trigger('click');
+			}
+
 			refreshSingleLivePreview();
-		}
 
 	});
 

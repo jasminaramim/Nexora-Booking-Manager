@@ -325,6 +325,19 @@ class NBM_Post_Types {
 				<input type="text" id="nbm_gallery_ids" name="nbm_gallery_ids" value="<?php echo esc_attr( $gallery_ids ); ?>" placeholder="e.g. 101, 102, 103" />
 				<small class="description"><?php esc_html_e( 'Upload images via Media Library and enter their IDs here for the listing gallery.', 'nexora-booking-manager' ); ?></small>
 			</div>
+			<div class="nbm-field-group">
+				<label for="nbm_single_layout"><?php esc_html_e( 'Single Details Page Layout Design', 'nexora-booking-manager' ); ?></label>
+				<?php $single_layout = get_post_meta( $post->ID, '_nbm_single_layout', true ); ?>
+				<select id="nbm_single_layout" name="nbm_single_layout">
+					<option value="" <?php selected( $single_layout, '' ); ?>><?php esc_html_e( '— Use Global Default Studio Design —', 'nexora-booking-manager' ); ?></option>
+					<option value="classic_hero" <?php selected( $single_layout, 'classic_hero' ); ?>><?php esc_html_e( 'Layout 1: Classic Luxury Hero', 'nexora-booking-manager' ); ?></option>
+					<option value="split_screen" <?php selected( $single_layout, 'split_screen' ); ?>><?php esc_html_e( 'Layout 2: Modern 50/50 Split Screen', 'nexora-booking-manager' ); ?></option>
+					<option value="fullscreen_cinematic" <?php selected( $single_layout, 'fullscreen_cinematic' ); ?>><?php esc_html_e( 'Layout 3: Fullscreen Cinematic Showcase', 'nexora-booking-manager' ); ?></option>
+					<option value="editorial_magazine" <?php selected( $single_layout, 'editorial_magazine' ); ?>><?php esc_html_e( 'Layout 4: Editorial Magazine & Story', 'nexora-booking-manager' ); ?></option>
+					<option value="tabbed_navigator" <?php selected( $single_layout, 'tabbed_navigator' ); ?>><?php esc_html_e( 'Layout 5: Interactive Tabbed Navigator', 'nexora-booking-manager' ); ?></option>
+				</select>
+				<small class="description"><?php esc_html_e( 'Choose a bespoke layout for this venue or inherit the global design chosen in Shortcode Generator & Design Studio.', 'nexora-booking-manager' ); ?></small>
+			</div>
 		</div>
 		<?php
 	}
@@ -489,6 +502,19 @@ class NBM_Post_Types {
 				<label for="nbm_bar_gallery_ids"><?php esc_html_e( 'Image Gallery Attachment IDs (comma-separated)', 'nexora-booking-manager' ); ?></label>
 				<input type="text" id="nbm_bar_gallery_ids" name="nbm_gallery_ids" value="<?php echo esc_attr( $gallery_ids ); ?>" placeholder="e.g. 201, 202, 203" />
 			</div>
+			<div class="nbm-field-group">
+				<label for="nbm_bar_single_layout"><?php esc_html_e( 'Single Details Page Layout Design', 'nexora-booking-manager' ); ?></label>
+				<?php $bar_single_layout = get_post_meta( $post->ID, '_nbm_single_layout', true ); ?>
+				<select id="nbm_bar_single_layout" name="nbm_single_layout">
+					<option value="" <?php selected( $bar_single_layout, '' ); ?>><?php esc_html_e( '— Use Global Default Studio Design —', 'nexora-booking-manager' ); ?></option>
+					<option value="classic_hero" <?php selected( $bar_single_layout, 'classic_hero' ); ?>><?php esc_html_e( 'Layout 1: Classic Luxury Hero', 'nexora-booking-manager' ); ?></option>
+					<option value="split_screen" <?php selected( $bar_single_layout, 'split_screen' ); ?>><?php esc_html_e( 'Layout 2: Modern 50/50 Split Screen', 'nexora-booking-manager' ); ?></option>
+					<option value="fullscreen_cinematic" <?php selected( $bar_single_layout, 'fullscreen_cinematic' ); ?>><?php esc_html_e( 'Layout 3: Fullscreen Cinematic Showcase', 'nexora-booking-manager' ); ?></option>
+					<option value="editorial_magazine" <?php selected( $bar_single_layout, 'editorial_magazine' ); ?>><?php esc_html_e( 'Layout 4: Editorial Magazine & Story', 'nexora-booking-manager' ); ?></option>
+					<option value="tabbed_navigator" <?php selected( $bar_single_layout, 'tabbed_navigator' ); ?>><?php esc_html_e( 'Layout 5: Interactive Tabbed Navigator', 'nexora-booking-manager' ); ?></option>
+				</select>
+				<small class="description"><?php esc_html_e( 'Choose a bespoke layout for this venue or inherit the global design chosen in Shortcode Generator & Design Studio.', 'nexora-booking-manager' ); ?></small>
+			</div>
 		</div>
 		<?php
 	}
@@ -559,6 +585,15 @@ class NBM_Post_Types {
 		// Textarea
 		if ( isset( $_POST['nbm_booking_rules'] ) ) {
 			update_post_meta( $post_id, '_nbm_booking_rules', sanitize_textarea_field( wp_unslash( $_POST['nbm_booking_rules'] ) ) );
+		}
+
+		// Single page layout design
+		if ( isset( $_POST['nbm_single_layout'] ) ) {
+			$layout_choice = sanitize_key( wp_unslash( $_POST['nbm_single_layout'] ) );
+			$valid_layouts = array( '', 'classic_hero', 'split_screen', 'fullscreen_cinematic', 'editorial_magazine', 'tabbed_navigator' );
+			if ( in_array( $layout_choice, $valid_layouts, true ) ) {
+				update_post_meta( $post_id, '_nbm_single_layout', $layout_choice );
+			}
 		}
 	}
 
@@ -633,6 +668,15 @@ class NBM_Post_Types {
 				);
 			}
 			update_post_meta( $post_id, '_nbm_opening_hours', $sanitized_hours );
+		}
+
+		// Single page layout design
+		if ( isset( $_POST['nbm_single_layout'] ) ) {
+			$layout_choice = sanitize_key( wp_unslash( $_POST['nbm_single_layout'] ) );
+			$valid_layouts = array( '', 'classic_hero', 'split_screen', 'fullscreen_cinematic', 'editorial_magazine', 'tabbed_navigator' );
+			if ( in_array( $layout_choice, $valid_layouts, true ) ) {
+				update_post_meta( $post_id, '_nbm_single_layout', $layout_choice );
+			}
 		}
 	}
 

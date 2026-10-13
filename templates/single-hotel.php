@@ -39,7 +39,12 @@ if ( ! empty( $gallery_ids_raw ) ) {
 	$gallery_ids = array_filter( array_map( 'absint', explode( ',', $gallery_ids_raw ) ) );
 }
 
-$single_design = sanitize_key( $_GET['nbm_single_preset'] ?? NBM_Settings::get( 'single_details_design', 'classic_hero' ) );
+$post_layout   = get_post_meta( $hotel_id, '_nbm_single_layout', true );
+$global_layout = NBM_Settings::get( 'single_details_design', 'classic_hero' );
+$single_design = ! empty( $post_layout ) ? $post_layout : $global_layout;
+if ( ! empty( $_GET['nbm_single_preset'] ) ) {
+	$single_design = sanitize_key( $_GET['nbm_single_preset'] );
+}
 $valid_designs = array( 'classic_hero', 'split_screen', 'fullscreen_cinematic', 'editorial_magazine', 'tabbed_navigator' );
 if ( ! in_array( $single_design, $valid_designs, true ) ) {
 	$single_design = 'classic_hero';

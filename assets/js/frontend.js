@@ -187,7 +187,7 @@
 			e.preventDefault();
 			var $btn = $(this);
 			var targetTab = $btn.data('tab');
-			var $wrap = $btn.closest('.nbm-single-layout-tabbed_navigator');
+			var $wrap = $btn.closest('.nbm-single-layout-tabbed_navigator, .nbm-single-listing');
 
 			$wrap.find('.nbm-tab-nav-btn').removeClass('active');
 			$btn.addClass('active');

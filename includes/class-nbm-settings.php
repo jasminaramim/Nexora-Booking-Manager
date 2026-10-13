@@ -172,14 +172,36 @@ class NBM_Settings {
 		$sanitized['hotel_default_max_stay']   = max( $sanitized['hotel_default_min_stay'], absint( $input['hotel_default_max_stay'] ?? $defaults['hotel_default_max_stay'] ) );
 		$sanitized['hotel_default_max_guests'] = max( 1, absint( $input['hotel_default_max_guests'] ?? $defaults['hotel_default_max_guests'] ) );
 
-		// Bar rules
+		// Bar presets & card options
 		$sanitized['bar_default_duration']     = max( 15, absint( $input['bar_default_duration'] ?? $defaults['bar_default_duration'] ) );
 		$sanitized['bar_default_max_guests']   = max( 1, absint( $input['bar_default_max_guests'] ?? $defaults['bar_default_max_guests'] ) );
 		$sanitized['bar_default_notice_hours'] = absint( $input['bar_default_notice_hours'] ?? $defaults['bar_default_notice_hours'] );
-		$preset_input = sanitize_key( $input['bar_default_card_preset'] ?? '' );
-		$sanitized['bar_default_card_preset'] = in_array( $preset_input, array( 'modern', 'luxury', 'glassmorphism', 'minimal' ), true )
-			? $preset_input
-			: $defaults['bar_default_card_preset'];
+		$all_card_presets                      = array( 'modern', 'luxury', 'glassmorphism', 'minimal', 'neon', 'vintage', 'bistro_horizontal' );
+		$bar_preset                            = sanitize_key( $input['bar_default_card_preset'] ?? '' );
+		$sanitized['bar_default_card_preset']  = in_array( $bar_preset, $all_card_presets, true ) ? $bar_preset : $defaults['bar_default_card_preset'];
+		$sanitized['bar_default_columns']      = max( 1, min( 4, absint( $input['bar_default_columns'] ?? $defaults['bar_default_columns'] ) ) );
+		$sanitized['bar_default_per_page']     = max( 1, absint( $input['bar_default_per_page'] ?? $defaults['bar_default_per_page'] ) );
+		$bar_accent                            = sanitize_hex_color( $input['bar_default_accent_color'] ?? '' );
+		$sanitized['bar_default_accent_color'] = $bar_accent ? $bar_accent : $defaults['bar_default_accent_color'];
+		$bar_card_bg                           = sanitize_hex_color( $input['bar_default_card_bg'] ?? '' );
+		$sanitized['bar_default_card_bg']      = $bar_card_bg ? $bar_card_bg : $defaults['bar_default_card_bg'];
+		$sanitized['bar_default_btn_text']     = sanitize_text_field( $input['bar_default_btn_text'] ?? $defaults['bar_default_btn_text'] );
+
+		// Hotel presets & card options
+		$hotel_preset                          = sanitize_key( $input['hotel_default_card_preset'] ?? '' );
+		$sanitized['hotel_default_card_preset'] = in_array( $hotel_preset, $all_card_presets, true ) ? $hotel_preset : $defaults['hotel_default_card_preset'];
+		$sanitized['hotel_default_columns']    = max( 1, min( 4, absint( $input['hotel_default_columns'] ?? $defaults['hotel_default_columns'] ) ) );
+		$sanitized['hotel_default_per_page']   = max( 1, absint( $input['hotel_default_per_page'] ?? $defaults['hotel_default_per_page'] ) );
+		$hotel_accent                          = sanitize_hex_color( $input['hotel_default_accent_color'] ?? '' );
+		$sanitized['hotel_default_accent_color'] = $hotel_accent ? $hotel_accent : $defaults['hotel_default_accent_color'];
+		$hotel_card_bg                         = sanitize_hex_color( $input['hotel_default_card_bg'] ?? '' );
+		$sanitized['hotel_default_card_bg']    = $hotel_card_bg ? $hotel_card_bg : $defaults['hotel_default_card_bg'];
+		$sanitized['hotel_default_btn_text']   = sanitize_text_field( $input['hotel_default_btn_text'] ?? $defaults['hotel_default_btn_text'] );
+
+		// Single Details Page Layout Design Preset
+		$all_single_designs                    = array( 'classic_hero', 'split_screen', 'fullscreen_cinematic', 'editorial_magazine', 'tabbed_navigator' );
+		$single_design_val                     = sanitize_key( $input['single_details_design'] ?? '' );
+		$sanitized['single_details_design']    = in_array( $single_design_val, $all_single_designs, true ) ? $single_design_val : $defaults['single_details_design'];
 
 		// Workflow
 		$sanitized['pending_hold_hours']         = absint( $input['pending_hold_hours'] ?? $defaults['pending_hold_hours'] );
